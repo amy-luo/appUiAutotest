@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
  * Time: 21:26
  */
 public class LoadConfig {
-        private static ResourceBundle bundle=ResourceBundle.getBundle("ats-config", Locale.CHINA);
+        private static ResourceBundle bundle=ResourceBundle.getBundle("ui-config", Locale.CHINA);
         public static String getConfig(String env){
             env=bundle.getString(env);
             return env;

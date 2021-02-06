@@ -3,7 +3,7 @@
 <suite name="移动端自动化测试">
     <test name="移动端自动化测试">
         <classes>
-            <class name="com.mytest.function.starter.FunctionTestBase">
+            <class name="com.mytest.function.baseStater.FunctionTestBase">
                 <methods>
                 </methods>
             </class>
@@ -11,7 +11,7 @@
     </test>
 
     <!--<listeners>-->
-        <!--<listener class-name="com.com.mytest.function.starter.ExtentTestNGIReporterListener" />-->
+        <!--<listener class-name="com.com.mytest.function.baseStater.ExtentTestNGIReporterListener" />-->
     <!--</listeners>-->
 
 </suite>
