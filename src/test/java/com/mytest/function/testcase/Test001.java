@@ -11,9 +11,6 @@ public class Test001{
         AppiumDriver driver=new GetAppiumDriver().setUp();
         driver.findElement(By.name("微信")).click();
         driver.findElement(By.name("登录")).click();
-        driver.findElement(By.name("+")).click();
-        driver.findElement(By.name("6")).click();
-        driver.findElement(By.name("=")).click();
         org.testng.Assert.assertEquals(true==driver.findElement(By.name("101")).isDisplayed(),"找不到元素***");
         driver.quit();
     }

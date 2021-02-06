@@ -9,11 +9,7 @@ public class Test002 {
     @CCPrepare(id="Test002")
     public void test2() throws Exception {
         AppiumDriver driver=new GetAppiumDriver().setUp();
-        driver.findElement(By.name("9")).click();
-        driver.findElement(By.name("5")).click();
-        driver.findElement(By.name("+")).click();
-        driver.findElement(By.name("7")).click();
-        driver.findElement(By.name("=")).click();
+        driver.findElement(By.name("注册")).click();
         org.testng.Assert.assertEquals(true==driver.findElement(By.name("101")).isDisplayed(),"找不到元素***");
         driver.quit();
     }

@@ -15,8 +15,8 @@ public class LoginTest{
         AppiumDriver driver=new GetAppiumDriver().setUp();
         //加线程等待
         Thread.sleep(5000);
-        //打开微信后点击登录
-        driver.findElementByName("请填写QQ密码").sendKeys("lyf890421");
+        //打开微信后登录
+        driver.findElementByName("请填写QQ密码").sendKeys("123456");
         driver.findElement(By.id("com.tencent.mm:id/d5n")).click();
 
 //        driver.findElementsByXPath("");
