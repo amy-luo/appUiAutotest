@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class LoginTest{
     protected static final Logger logger= LoggerFactory.getLogger(LoginTest.class);
+
     @CCPrepare(id="LoginTest")
     public void loginTest() throws Exception {
         AppiumDriver driver=new GetAppiumDriver().setUp();
