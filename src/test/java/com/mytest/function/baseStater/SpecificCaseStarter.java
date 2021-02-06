@@ -1,14 +1,11 @@
 package com.mytest.function.baseStater;
 
+import com.mytest.function.Utils.CCPrepare;
 import com.mytest.function.Utils.GetAppiumDriver;
 import com.mytest.function.Utils.MyDataProvider;
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.lf5.util.Resource;
 import org.apache.log4j.lf5.util.ResourceUtils;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.reflections.Reflections;
 import org.reflections.scanners.MethodAnnotationsScanner;
 import org.reflections.util.ClasspathHelper;
@@ -43,11 +40,6 @@ public class SpecificCaseStarter {
 //    @BeforeTest
 //    public void setUp() throws Exception {
 //    }
-
-    @AfterTest
-    public void tearDown() throws Exception {
-        GetAppiumDriver.driver.quit();
-    }
 
     @DataProvider(name = "myDataProvider")
     public Iterator<Object[]> batchDataProvider(Method method) {

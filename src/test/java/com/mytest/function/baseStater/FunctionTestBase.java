@@ -3,6 +3,7 @@
 */
 package com.mytest.function.baseStater;
 
+import com.mytest.function.Utils.CCPrepare;
 import com.mytest.function.Utils.GetAppiumDriver;
 import com.mytest.function.Utils.MyDataProvider;
 import org.apache.log4j.PropertyConfigurator;
@@ -18,9 +19,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.yaml.snakeyaml.Yaml;
 
-import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -49,11 +48,6 @@ public class FunctionTestBase {
 //    @BeforeTest
 //    public void setUp() throws Exception {
 //    }
-
-    @AfterTest
-    public void tearDown() throws Exception {
-        GetAppiumDriver.driver.quit();
-    }
 
     @DataProvider(name = "myDataProvider_all")
     public Iterator<Object[]> batchDataProvider() {
