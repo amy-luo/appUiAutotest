@@ -15,10 +15,7 @@ import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -45,9 +42,15 @@ public class FunctionTestBase {
         System.out.println(url.getPath());
         PropertyConfigurator.configure(url.getPath());
     }
-//    @BeforeTest
-//    public void setUp() throws Exception {
-//    }
+    @BeforeTest
+    public void setUp() throws Exception {
+        GetAppiumDriver.driver=GetAppiumDriver.setUp();
+    }
+
+    @AfterTest
+    public void tearDown() throws Exception {
+        GetAppiumDriver.tearDown();
+    }
 
     @DataProvider(name = "myDataProvider_all")
     public Iterator<Object[]> batchDataProvider() {

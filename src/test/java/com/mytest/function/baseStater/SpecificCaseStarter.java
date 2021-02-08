@@ -37,9 +37,15 @@ public class SpecificCaseStarter {
         System.out.println(url.getPath());
         PropertyConfigurator.configure(url.getPath());
     }
-//    @BeforeTest
-//    public void setUp() throws Exception {
-//    }
+    @BeforeTest
+    public void setUp() throws Exception {
+        GetAppiumDriver.driver=GetAppiumDriver.setUp();
+    }
+
+    @AfterTest
+    public void tearDown() throws Exception {
+        GetAppiumDriver.tearDown();
+    }
 
     @DataProvider(name = "myDataProvider")
     public Iterator<Object[]> batchDataProvider(Method method) {

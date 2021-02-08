@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.w3c.dom.html.HTMLInputElement;
 
 public class GetAppiumDriver {
-    public AppiumDriver driver;
+    public static AppiumDriver driver;
     public static DesiredCapabilities getCapabilities(){
         // TODO Auto-generated method stub
         //1.添加配置，创建DesiredCapabilities对象
@@ -30,7 +30,7 @@ public class GetAppiumDriver {
         return capabilities;
 
     }
-    public AppiumDriver setUp() throws Exception {
+    public static AppiumDriver setUp() throws Exception {
         //2.创建驱动...URL是appium的固定地址；指定appium通讯的地址，将相对应的配置传入到驱动里边
         if(LoadConfig.getConfig("platformName").equals("Android")) {
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), GetAppiumDriver.getCapabilities());
@@ -40,12 +40,12 @@ public class GetAppiumDriver {
         return driver;
     }
 
-    public void tearDown() throws Exception {
+    public static void tearDown() throws Exception {
         driver.quit();
     }
 
     public static void main(String[] args) throws Exception {
-        AppiumDriver driver=new GetAppiumDriver().setUp();
-        driver.quit();
+        GetAppiumDriver.driver= GetAppiumDriver.setUp();
+        GetAppiumDriver.tearDown();
     }
 }
